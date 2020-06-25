@@ -1,9 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({
-    Key key,
-  }) : super(key: key);
+  Home({this.onSignOut});
+  final Function onSignOut;
+  final auth = FirebaseAuth.instance;
+
+  Future<void> signout() async {
+    await auth.signOut();
+    onSignOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +17,9 @@ class Home extends StatelessWidget {
       body: Container(
         child: Center(
           child: RaisedButton(
-            color:Colors.red,
+            color: Colors.red,
             child: Text('Log out'),
-            onPressed: () {},
+            onPressed: signout,
           ),
         ),
       ),
