@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_and_firebase/screens/home.dart';
 import 'package:flutter_and_firebase/screens/signin_page.dart';
 
 class LandingPage extends StatefulWidget {
@@ -23,17 +24,8 @@ class _LandingPageState extends State<LandingPage> {
         onSignIn: _updateUser,
       );
     } else {
-      return Scaffold(
-        body: Container(
-          child: Center(
-            child: RaisedButton(
-              color:Colors.red,
-              child: Text('Log out'),
-              onPressed: () {},
-            ),
-          ),
-        ),
-      );
+      return Home();
     }
   }
 }
+
