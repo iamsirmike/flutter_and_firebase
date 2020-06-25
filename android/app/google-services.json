@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "915059900812",
+    "firebase_url": "https://time-tracker-55abb.firebaseio.com",
+    "project_id": "time-tracker-55abb",
+    "storage_bucket": "time-tracker-55abb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915059900812:android:e3776d701d52cbc09bd6a9",
+        "android_client_info": {
+          "package_name": "com.example.flutter_and_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915059900812-42n0n2rovbroi4gfl3lsc5o9ksjjrv40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWK66zMEwTHP2RZsiDS-kdvg6PBgpfAes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915059900812-42n0n2rovbroi4gfl3lsc5o9ksjjrv40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
