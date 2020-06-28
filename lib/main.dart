@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_and_firebase/screens/landing_page.dart';
+import 'package:flutter_and_firebase/services/auth.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LandingPage(),
+      home: LandingPage(
+        // auth: Auth(),
+      ),
     );
   }
 }

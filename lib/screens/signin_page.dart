@@ -1,26 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_and_firebase/services/auth.dart';
 import 'package:flutter_and_firebase/widgets/custombutton.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class Signin extends StatelessWidget {
-  Signin({this.onSignIn});
-  final Function(FirebaseUser) onSignIn;
-  final auth = FirebaseAuth.instance;
+  // Signin({this.auth}); //constructor for the function
 
+  final Auth auth = Auth(); //create a firebaseAuth instance
+
+  // final String email = "asamoahmichael77@gmail.com";
+  // final String pass = 'okokokokokoko';
+//SIGNIN ANONYMOUSLY
   Future<void> _loginanymo() async {
     try {
-      final authResult = await auth.signInAnonymously();
-      onSignIn(authResult.user);
+      await auth.signinAnonym();
     } catch (e) {
       print(e.toString());
     }
   }
 
+  Future<void> _signinwithgoogle() async {
+    try {
+      await auth.signInWithGoogle();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  // Future<void> _reg() async {
+  //   try {
+  //     await auth.signupwithemail(email, pass);
+  //   } catch (e) {
+  //     print(e.toString());
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Time Tracker'),
+        title: Text('Firebase Auth'),
       ),
       body: SafeArea(
         child: Padding(
@@ -39,7 +57,7 @@ class Signin extends StatelessWidget {
               CustomButton(
                 label: 'Sign in with google',
                 color: Colors.white,
-                onpressed: () {},
+                onpressed: _signinwithgoogle,
               ),
               SizedBox(height: 10.0),
               CustomButton(
